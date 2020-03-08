@@ -8,6 +8,7 @@ edition = "2018"
 
 [dependencies]
 chrono = "0.4"
+diesel = { version = "1.0.0", features = ["postgres"] }
 fern = { version = "0.5", features = ["colored"]}
 log = "0.4"
 serenity = "0.8"

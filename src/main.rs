@@ -23,11 +23,8 @@ fn main() {
     info!("SFS v{} - written by Skye.", env!("CARGO_PKG_VERSION"));
 
     // Login with a bot token from the environment
-    let mut client = Client::new(
-        &"NTQxMDI0MzY4NTc1MzgxNTA0.XmQIfg.xOp2B9BHRE9ZpxxCh2KncV0kQ40",
-        Handler,
-    )
-    .expect("Error creating client");
+    let mut client =
+        Client::new(utils::env::EnvConfig::fetch().token, Handler).expect("Error creating client");
 
     {
         let mut data = client.data.write();
